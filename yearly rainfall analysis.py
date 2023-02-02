@@ -47,18 +47,18 @@ df['std_anomaly'] = std_anomaly = stand(anomaly)
 # find the cumulative of the the std_anomaly
 df['cstd'] = cstd = std_anomaly.cumsum()
 
-# # create a plot of the cumulative
-# # create the figure
-# # fig = plt.figure()
-# # plt.minorticks_on()
-# # plt.grid(b=True, which='both', axis='both', color='#666666', linestyle='-')
+# create a plot of the cumulative
+# create the figure
+fig = plt.figure()
+plt.minorticks_on()
+plt.grid(b=True, which='both', axis='both', color='#666666', linestyle='-')
 
-# plt.figure(figsize=(15, 4))
-# ax = plt.subplot()
-# sb.lineplot(data=df, x='date', y='cstd', ax=ax)
+plt.figure(figsize=(15, 4))
+ax = plt.subplot()
+sb.lineplot(data=df, x='date', y='cstd', ax=ax)
 
-# # # finding the onset and cessation
-# anomalyx = cstd.values
+# finding the onset and cessation
+anomalyx = cstd.values
 
 df[['date', 'cstd']].set_index('date')['1969':'1969'].plot()
 
@@ -85,7 +85,3 @@ ax.plot(PLT_onsets, onset[1], 'ro')
 
 ax.plot(onset[0], onset[1], 'ro')
 ax.plot(cessation[0], cessation[1], 'bo')
-
-#sb.lineplot(onset, ax=ax)
-
-# onset.to_csv("C: / Users/micha/OneDrive/Desktop/Rainfall Analysis Publication/text files/climatological cumulative/onset.txt')
