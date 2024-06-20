@@ -18,7 +18,7 @@ column_labels = ['years', 'months', 'days', 'precipitation']
 
 # read data as a frame from location
 data = df = pd.read_csv(
-    "C:/Users/micha/OneDrive/Desktop/Rainfall Analysis Publication/Synopdata/Yendi_1960_2020_dRR_cgf.txt",
+    "./data/Synopdata/Yendi_1960_2020_dRR_cgf.txt",
     header=None, sep='\s+', names=column_labels)
 
 
@@ -51,7 +51,7 @@ df['cstd'] = cstd = std_anomaly.cumsum()
 # create the figure
 fig = plt.figure()
 plt.minorticks_on()
-plt.grid(b=True, which='both', axis='both', color='#666666', linestyle='-')
+plt.grid(visible=True, which='both', axis='both', color='#666666', linestyle='-')
 
 plt.figure(figsize=(15, 4))
 ax = plt.subplot()
